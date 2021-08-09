@@ -142,7 +142,7 @@ TW_USE_TOOLBOX := true
 TW_EXCLUDE_TWRPAPP := true
 USE_RECOVERY_INSTALLER := true
 RECOVERY_INSTALLER_PATH := device/motorola/troika/installer
-TW_NO_HAPTICS := true
+##TW_NO_HAPTICS := true
 
 # Installer
 TW_INCLUDE_REPACKTOOLS := true
