@@ -126,6 +126,9 @@ TW_INCLUDE_CRYPTO_FBE := true
 TW_INCLUDE_FBE_METADATA_DECRYPT := true
 BOARD_USES_METADATA_PARTITION := true
 
+# Extras
+TARGET_SYSTEM_PROP += $(PLATFORM_PATH)/system.prop
+
 # TWRP
 TW_THEME := portrait_hdpi
 TW_BRIGHTNESS_PATH := "/sys/class/backlight/backlight_0/brightness"
@@ -160,3 +163,70 @@ TARGET_USES_LOGD := true
 # Workaround for error copying vendor files to recovery ramdisk
 BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
 TARGET_COPY_OUT_VENDOR := vendor
+
+############################################################################
+# SHRP flags
+############################################################################
+
+# Device codename
+# Default (if not set): N/A
+SHRP_DEVICE_CODE := troika
+
+# Path of your SHRP device tree
+# Replace <device-brand> with the device brand name
+# (SHRP_DEVICE_CODE will expand to the above variable so check if that is correct)
+SHRP_PATH := device/motorola/troika
+
+# Maintainer name
+# Default (if not set): N/A
+SHRP_MAINTAINER := MNoxx74
+
+# Recovery Type (for "About" section only)
+# Default (if not set): N/A
+SHRP_REC_TYPE := Treble
+
+# Device Type (for "About" section only)
+# Default (if not set): N/A
+SHRP_DEVICE_TYPE := A/B
+
+# Emergency DownLoad mode (0 = no EDL mode, 1 = EDL mode available)
+# Default (if not set): 0
+SHRP_EDL_MODE := 1
+
+# internal storage path
+# Default (if not set): /sdcard
+SHRP_INTERNAL := /sdcard
+
+# If your device has an external sdcard
+# Default (if not set): /
+SHRP_EXTERNAL := /external_sd
+
+# USB OTG path
+# Default (if not set): /
+SHRP_OTG := /usb_otg
+
+# Flashlight: (0 = disable, 1 = enable)
+# Default (if not set): 0
+SHRP_FLASH := 1
+
+# Use this flag only if your device is A/B.
+# Default (if not set) is no A/B device
+# Set this variable when true ONLY (do not use "false" or similiar)
+SHRP_AB := true
+
+# SHRP Express, enables on-the-fly theme patching (also persistent) + persistent lock
+# Default (if not set) is not using Express
+# Set this variable when true ONLY (do not use "false" or similiar)
+SHRP_EXPRESS := true
+
+# SHRP Dark mode, use this flag to have dark theme set by default
+# Default (if not set) is not using DARK mode
+# Set this variable when true ONLY (do not use "false" or similiar)
+SHRP_DARK := true
+
+INC_IN_REC_MAGISK := true
+SHRP_NOTCH := true
+INC_IN_REC_ADDON_1 := true
+INC_IN_REC_ADDON_2 := true
+INC_IN_REC_ADDON_3 := true
+INC_IN_REC_ADDON_4 := true
